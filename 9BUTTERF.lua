@@ -148,7 +148,7 @@ function render_board(index,bd)
     
   if bd==cur_board and math.abs(diff)<0.1 then bd.active=true end
   if bd.active2 then lup_trans=false; ldn_trans=false; 
-    if (not hourglass) or (hourglass and hourglass_tick) then 
+    if TIC==update and (not hourglass) or (hourglass and hourglass_tick) then 
     bd.algo(bd) 
     end
   end
@@ -988,3 +988,5 @@ function credits()
   t=t+1
 end
 --TIC=credits
+--pmem(7,10)
+--pmem(8,10)
