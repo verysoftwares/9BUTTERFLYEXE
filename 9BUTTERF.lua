@@ -199,9 +199,9 @@ function render_board(index,bd)
 
     if b.id==34 then spr(b.id,b.x-3,b.y-3,8) end
     if b.id==35 then 
-      if TIC==update and stage==2 then pal(0,7) end
-      if TIC==update and stage==3 then pal(0,5) end
-      if TIC==update and stage==4 then pal(0,9) end
+      if (TIC==update or TIC==ldown or TIC==spawn_coins) and stage==2 then pal(0,7) end
+      if (TIC==update or TIC==ldown or TIC==spawn_coins) and stage==3 then pal(0,5) end
+      if (TIC==update or TIC==ldown or TIC==spawn_coins) and stage==4 then pal(0,9) end
       if TIC==stagesel and b.label=='Stage 1' then pal(0,0) end
       if TIC==stagesel and b.label=='Stage 2' then pal(0,7) end
       if TIC==stagesel and b.label=='Stage 3' then pal(0,4) end
@@ -600,6 +600,10 @@ function spawn_coins()
     if b.id~=tbid then 
       b.id=tbid
       hit=hit+1
+      -- there's something funky happening here.
+      -- the game seems to hang and hit every frame
+      trace(hit)
+      trace(i,3)
       if hit>=6 then
         sfx(5,'E-5',64,3)
         return
