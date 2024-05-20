@@ -293,8 +293,8 @@ function render_board(index,bd)
     if math.sqrt((b.x-bd.cx)^2+(b.y-bd.cy)^2)>=136/2-16 then table.remove(bd.bullets,i) end
   end
   
-  local evade_act2=false
   if bd==cur_board then
+  local evade_act2=false
   if evade then pal(11,2) end
   spr(32+(t*0.1)%2,bd.cx+cos(pi/2)*r-3,bd.cy+sin(pi/2)*r-5,8)
   pal()
@@ -601,12 +601,12 @@ function spawn_coins()
     if b.id~=tbid then 
       b.id=tbid
       hit=hit+1
+      if hit==1 then sfx(5,'E-5',64,3) end
       -- there's something funky happening here.
       -- the game seems to hang and hit every frame
       trace(hit)
       trace(i,3)
       if hit>=6 then
-        sfx(5,'E-5',64,3)
         return
       end
     end
