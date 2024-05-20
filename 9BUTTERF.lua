@@ -112,9 +112,9 @@ function update()
       circ(boards[1].cx-80-16-1,ty-6-1,6,8)
       circb(boards[1].cx-80-16-1,ty-6-1,6,13)
       circ(boards[1].cx-80+16+1,ty+6+1,6,8)
-      circb(boards[1].cx-80+16+1,ty+6+1,6,13)
+      circb(boards[1].cx-80+16+1,ty+6+1,6,6)
       print(mem,boards[1].cx-80-16-print(mem,0,-6,0,false,1,true)/2,ty-6-1-2,13,false,1,true)
-      print(bn,boards[1].cx-80+16+1-1,ty+6+1-2,6,false,1,true)
+      print(bn,boards[1].cx-80+16+1-1,ty+6+1-2,13,false,1,true)
       ty=ty+32+2
     end
   end
