@@ -304,6 +304,7 @@ function render_board(index,bd)
       if evade then
         if not evade_act then evade_act=true end
         evade_act2=true
+        trace(p,10)
         goto endplr
       else
         pop_board(false)
@@ -314,9 +315,9 @@ function render_board(index,bd)
     end
     pix(bd.cx+cos(pi/2)*r-3+sx+2,bd.cy+sin(pi/2)*r-5+sy+3,13)
   end end
-  end
   ::endplr::
   if evade_act and not evade_act2 then evade=false; evade_act=false end
+  end
   
   if TIC==update or TIC==ldown or TIC==spawn_coins then
   local tw=print(string.format('Level %d',index),0,-12,0,false,2,false)
@@ -990,3 +991,4 @@ end
 --TIC=credits
 --pmem(7,10)
 --pmem(8,10)
+--pmem(5,10)
