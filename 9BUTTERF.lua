@@ -955,14 +955,14 @@ function credits()
     end
   end
   dx=dx or 0
-  if btn(2) then dx=dx-0.95 end
-  if btn(3) then dx=dx+0.95 end
+  if btn(2) then nice=true; dx=dx-0.95 end
+  if btn(3) then nice=true; dx=dx+0.95 end
   x=x+dx
   dx=dx*0.95
 
   dy=dy or 0
-  if btn(0) then dy=dy-0.95 end
-  if btn(1) then dy=dy+0.95 end
+  if btn(0) then nice=true; dy=dy-0.95 end
+  if btn(1) then nice=true; dy=dy+0.95 end
   y=y+dy
   dy=dy*0.95
 
@@ -980,7 +980,9 @@ function credits()
 
   spr(1+t%60//30*2,x+24+64,y-24+18,14,1,0,0,2,2)
 
-  print('Press C to return to title.',0,136-6,9+t*0.1%5,false,1,true)
+  local msg='Press C to return to title.'
+  if nice then msg='Nice :D' end
+  print(msg,0,136-6,9+t*0.1%5,false,1,true)
   if keyp(03) then TIC=stagesel; local diff=boards[#boards].a-pi/2; boards[#boards].a=pi/2; for i,b in ipairs(cur_board.bullets) do b.a=b.a-diff end end
 
   t=t+1
