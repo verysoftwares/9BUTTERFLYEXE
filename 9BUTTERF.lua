@@ -600,8 +600,8 @@ function spawn_coins()
   for i,b in ipairs(cur_board.bullets) do
     if b.id~=tbid then 
       b.id=tbid
+      if hit==0 then sfx(5,'E-5',64,3) end
       hit=hit+1
-      if hit==1 then sfx(5,'E-5',64,3) end
       -- there's something funky happening here.
       -- the game seems to hang and hit every frame
       trace(hit)
@@ -847,7 +847,7 @@ function shoppe()
   spr(64+6,240/2+240/4-12,8+4,8,1,0,0,3,3)
   print('Insta-level',240/2+240/4-print('Insta-level',0,-6)/2-1,1,8)
   print('X to buy/use',240/2+240/4-16-print('X to buy/use',0,-6,0,false,1,true)+2,24-4,11,false,1,true)
-  if pmem(7)>0 then print(string.format('In stock: %d',pmem(7)),240/2+240/4-16-print(string.format('In stock: %d',pmem(6)),0,-6,0,false,1,true),24-4+6,11,false,1,true) end
+  if pmem(7)>0 then print(string.format('In stock: %d',pmem(7)),240/2+240/4-16-print(string.format('In stock: %d',pmem(7)),0,-6,0,false,1,true),24-4+6,11,false,1,true) end
   print('Cost:',240/2+240/4+12,24-4,11,false,1,true)
   spr(36,240/2+240/4+12+print('Cost:',0,-6,0,false,1,true)+1,24-4-1,8)
   print('x2',240/2+240/4+12+print('Cost:',0,-6,0,false,1,true)+8+1+1,24-4,11)
@@ -858,7 +858,7 @@ function shoppe()
   spr(64+9,240/4-12,8+4+136/2,8,1,0,0,3,3)
   print('Timer -5s',240/4-print('Timer -5s',0,-6)/2-1,1+136/2,8)
   print('A to buy/use',240/4-16-print('A to buy/use',0,-6,0,false,1,true)+2,24-4+136/2,11,false,1,true)
-  if pmem(8)>0 then print(string.format('In stock: %d',pmem(8)),240/4-16-print(string.format('In stock: %d',pmem(5)),0,-6,0,false,1,true),24-4+6+136/2,11,false,1,true) end
+  if pmem(8)>0 then print(string.format('In stock: %d',pmem(8)),240/4-16-print(string.format('In stock: %d',pmem(8)),0,-6,0,false,1,true),24-4+6+136/2,11,false,1,true) end
   print('Cost:',240/4+12,24-4+136/2,11,false,1,true)
   spr(36,240/4+12+print('Cost:',0,-6,0,false,1,true)+1,24-4-1+136/2,8)
   print('x3',240/4+12+print('Cost:',0,-6,0,false,1,true)+8+1+1,24-4+136/2,11)
