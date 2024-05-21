@@ -831,49 +831,49 @@ function shoppe()
   rect(i%2*240/2,i//2*136/2,240/2,8,c)
   rectb(i%2*240/2,i//2*136/2,240/2,136/2,c)
   end
-  spr(64,240/4-12,8+4,8,1,0,0,3,3)
-  print('Shield',240/4-print('Shield',0,-6)/2-1,1,8)
-  print('Z to buy/use',240/4-16-print('Z to buy/use',0,-6,0,false,1,true)+2,24-4,13,false,1,true)
-  if pmem(5)>0 then print(string.format('In stock: %d',pmem(5)),240/4-16-print(string.format('In stock: %d',pmem(5)),0,-6,0,false,1,true),24-4+6,13,false,1,true) end
-  print('Cost:',240/4+12,24-4,13,false,1,true)
-  spr(36,240/4+12+print('Cost:',0,-6,0,false,1,true)+1,24-4-1,8)
-  print('x1',240/4+12+print('Cost:',0,-6,0,false,1,true)+8+1+1,24-4,13)
-  local msg='Allows you to safely\ntouch a bullet.'
-  local tw=print(msg,0,-12,0,false,1,true)
-  print(msg,240/4-tw/2,48-4,13,false,1,true)
-
-  spr(64+6,240/2+240/4-12,8+4,8,1,0,0,3,3)
-  print('Insta-level',240/2+240/4-print('Insta-level',0,-6)/2-1,1,8)
-  print('X to buy/use',240/2+240/4-16-print('X to buy/use',0,-6,0,false,1,true)+2,24-4,11,false,1,true)
-  if pmem(7)>0 then print(string.format('In stock: %d',pmem(7)),240/2+240/4-16-print(string.format('In stock: %d',pmem(7)),0,-6,0,false,1,true),24-4+6,11,false,1,true) end
-  print('Cost:',240/2+240/4+12,24-4,11,false,1,true)
-  spr(36,240/2+240/4+12+print('Cost:',0,-6,0,false,1,true)+1,24-4-1,8)
-  print('x2',240/2+240/4+12+print('Cost:',0,-6,0,false,1,true)+8+1+1,24-4,11)
-  local msg='Instantly levels up board.'
-  local tw=print(msg,0,-12,0,false,1,true)
-  print(msg,240/2+240/4-tw/2,48-4,11,false,1,true)
-
-  spr(64+9,240/4-12,8+4+136/2,8,1,0,0,3,3)
-  print('Timer -5s',240/4-print('Timer -5s',0,-6)/2-1,1+136/2,8)
-  print('A to buy/use',240/4-16-print('A to buy/use',0,-6,0,false,1,true)+2,24-4+136/2,11,false,1,true)
-  if pmem(8)>0 then print(string.format('In stock: %d',pmem(8)),240/4-16-print(string.format('In stock: %d',pmem(8)),0,-6,0,false,1,true),24-4+6+136/2,11,false,1,true) end
+  spr(64,240/4-12,8+4+136/2,8,1,0,0,3,3)
+  print('Shield',240/4-print('Shield',0,-6)/2-1,1+136/2,8)
+  print('Z to buy/use',240/4-16-print('Z to buy/use',0,-6,0,false,1,true)+2,24-4+136/2,11,false,1,true)
+  if pmem(5)>0 then print(string.format('In stock: %d',pmem(5)),240/4-16-print(string.format('In stock: %d',pmem(5)),0,-6,0,false,1,true),24-4+6+136/2,11,false,1,true) end
   print('Cost:',240/4+12,24-4+136/2,11,false,1,true)
   spr(36,240/4+12+print('Cost:',0,-6,0,false,1,true)+1,24-4-1+136/2,8)
-  print('x3',240/4+12+print('Cost:',0,-6,0,false,1,true)+8+1+1,24-4+136/2,11)
-  local msg='Boards pass by faster.'
+  print('x1',240/4+12+print('Cost:',0,-6,0,false,1,true)+8+1+1,24-4+136/2,11)
+  local msg='Allows you to safely\ntouch a bullet.'
   local tw=print(msg,0,-12,0,false,1,true)
   print(msg,240/4-tw/2,48-4+136/2,11,false,1,true)
 
-  spr(64+3,240/2+240/4-12,8+4+136/2,8,1,0,0,3,3)
-  print('Hourglass',240/2+240/4-print('Hourglass',0,-6)/2-1,1+136/2,8)
-  print('S to buy/use',240/2+240/4-16-print('S to buy/use',0,-6,0,false,1,true)+2,24-4+136/2,13,false,1,true)
-  if pmem(6)>0 then print(string.format('In stock: %d',pmem(6)),240/2+240/4-16-print(string.format('In stock: %d',pmem(6)),0,-6,0,false,1,true),24-4+6+136/2,13,false,1,true) end
+  spr(64+6,240/2+240/4-12,8+4+136/2,8,1,0,0,3,3)
+  print('Insta-level',240/2+240/4-print('Insta-level',0,-6)/2-1,1+136/2,8)
+  print('X to buy/use',240/2+240/4-16-print('X to buy/use',0,-6,0,false,1,true)+2,24-4+136/2,13,false,1,true)
+  if pmem(7)>0 then print(string.format('In stock: %d',pmem(7)),240/2+240/4-16-print(string.format('In stock: %d',pmem(7)),0,-6,0,false,1,true),24-4+6+136/2,13,false,1,true) end
   print('Cost:',240/2+240/4+12,24-4+136/2,13,false,1,true)
   spr(36,240/2+240/4+12+print('Cost:',0,-6,0,false,1,true)+1,24-4-1+136/2,8)
-  print('x10',240/2+240/4+12+print('Cost:',0,-6,0,false,1,true)+8+1+1,24-4+136/2,13)
-  local msg='Time only moves when\nyou move.'
+  print('x2',240/2+240/4+12+print('Cost:',0,-6,0,false,1,true)+8+1+1,24-4+136/2,13)
+  local msg='Instantly levels up board.'
   local tw=print(msg,0,-12,0,false,1,true)
   print(msg,240/2+240/4-tw/2,48-4+136/2,13,false,1,true)
+
+  spr(64+9,240/4-12,8+4,8,1,0,0,3,3)
+  print('Timer -5s',240/4-print('Timer -5s',0,-6)/2-1,1,8)
+  print('A to buy/use',240/4-16-print('A to buy/use',0,-6,0,false,1,true)+2,24-4,13,false,1,true)
+  if pmem(8)>0 then print(string.format('In stock: %d',pmem(8)),240/4-16-print(string.format('In stock: %d',pmem(8)),0,-6,0,false,1,true),24-4+6,13,false,1,true) end
+  print('Cost:',240/4+12,24-4,13,false,1,true)
+  spr(36,240/4+12+print('Cost:',0,-6,0,false,1,true)+1,24-4-1,8)
+  print('x3',240/4+12+print('Cost:',0,-6,0,false,1,true)+8+1+1,24-4,13)
+  local msg='Boards pass by faster.'
+  local tw=print(msg,0,-12,0,false,1,true)
+  print(msg,240/4-tw/2,48-4,13,false,1,true)
+
+  spr(64+3,240/2+240/4-12,8+4,8,1,0,0,3,3)
+  print('Hourglass',240/2+240/4-print('Hourglass',0,-6)/2-1,1,8)
+  print('S to buy/use',240/2+240/4-16-print('S to buy/use',0,-6,0,false,1,true)+2,24-4,11,false,1,true)
+  if pmem(6)>0 then print(string.format('In stock: %d',pmem(6)),240/2+240/4-16-print(string.format('In stock: %d',pmem(6)),0,-6,0,false,1,true),24-4+6,11,false,1,true) end
+  print('Cost:',240/2+240/4+12,24-4,11,false,1,true)
+  spr(36,240/2+240/4+12+print('Cost:',0,-6,0,false,1,true)+1,24-4-1,8)
+  print('x10',240/2+240/4+12+print('Cost:',0,-6,0,false,1,true)+8+1+1,24-4,11)
+  local msg='Time only moves when\nyou move.'
+  local tw=print(msg,0,-12,0,false,1,true)
+  print(msg,240/2+240/4-tw/2,48-4,11,false,1,true)
 
   local tw=print(string.format('x%d',pmem(4)),0,-6)
   print(string.format('x%d',pmem(4)),240-1-tw,136-7,3)
@@ -938,7 +938,7 @@ function credits()
       tx=tx+print(char,48+48*2+tx,136/2+24*2-12+32-18,(t+i)*0.2%16,false,1,true)
     end
   end
-  msg='https://github.com\n/verysoftwares\n/9BUTTERFEXE'
+  msg='https://github.com\n/verysoftwares\n/9BUTTERFLYEXE'
   do
     local tx,ty
     tx=0
