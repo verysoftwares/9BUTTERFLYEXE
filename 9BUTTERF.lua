@@ -197,8 +197,8 @@ function render_board(index,bd)
     end    
     end
 
-    if b.id==34 then spr(b.id,b.x-3,b.y-3,8) end
-    if b.id==35 then 
+    if b.id==34 then spr(b.id,b.x-3,b.y-3,8) 
+    elseif b.id==35 then 
       if (TIC==update or TIC==ldown or TIC==spawn_coins) and stage==2 then pal(0,7) end
       if (TIC==update or TIC==ldown or TIC==spawn_coins) and stage==3 then pal(0,5) end
       if (TIC==update or TIC==ldown or TIC==spawn_coins) and stage==4 then pal(0,9) end
@@ -241,24 +241,20 @@ function render_board(index,bd)
           
         end
       end
-    end
-    if b.id==36 then 
+    elseif b.id==36 then 
       smolcoin(1,b,i,bd)
-    end
-    if b.id==37 then 
+    elseif b.id==37 then 
       smolcoin(2,b,i,bd)
-    end
-    if b.id==38 then 
+    elseif b.id==38 then 
       smolcoin(5,b,i,bd)
-    end
-    if b.id==39 then 
+    elseif b.id==39 then 
       biggcoin(10,b,i,bd)
-    end
-    if b.id==41 then 
+    elseif b.id==41 then 
       biggcoin(20,b,i,bd)
-    end
-    if b.id==43 then 
+    elseif b.id==43 then 
       biggcoin(50,b,i,bd)
+    elseif b.id>=64 then
+      itemcoin(b,i,bd)
     end
     if math.sqrt((b.x-bd.cx)^2+(b.y-bd.cy)^2)>=136/2-16 then table.remove(bd.bullets,i) end
   end
@@ -366,6 +362,7 @@ function push_board()
     if #boards==9 then spd=nil end
     if #boards==10 then spd=nil end
     if #boards==11 then spd=nil end
+    if bt==nil then trace('you\'ve met the kill screen. fix the game\'s code yourself if you want to finish the experience.',2) end
   end
   boards[#boards].pr=r
   boards[#boards].tt=t+1
@@ -570,12 +567,19 @@ function spawn_coins()
   end
    
   t=t+1
-  local tbid=36
+
+  local tbid
+  if #boards==2 then tbid=36 end
   if #boards==3 then tbid=37 end
   if #boards==4 then tbid=38 end
   if #boards==5 then tbid=39 end
   if #boards==6 then tbid=41 end
   if #boards==7 then tbid=43 end
+  if #boards==8 then tbid=64 end
+  if #boards==9 then tbid=70 end
+  if #boards==10 then tbid=73 end
+  if #boards==11 then tbid=67 end
+
   local hit=0
   for i,b in ipairs(cur_board.bullets) do
     if b.id~=tbid then 
@@ -604,12 +608,17 @@ function drip_coin()
   if #boards==1 then return end
   
   local bd=boards[#boards-1]
-  local tbid=36
+  local tbid
+  if #boards==2 then tbid=36 end
   if #boards==3 then tbid=37 end
   if #boards==4 then tbid=38 end
   if #boards==5 then tbid=39 end
   if #boards==6 then tbid=41 end
   if #boards==7 then tbid=43 end
+  if #boards==8 then tbid=64 end
+  if #boards==9 then tbid=70 end
+  if #boards==10 then tbid=73 end
+  if #boards==11 then tbid=67 end
   
   for i,b in ipairs(bd.bullets) do
     if b.id~=tbid then
@@ -633,6 +642,18 @@ function biggcoin(n,b,i,bd)
   spr(b.id,b.x-8,b.y-8,8,1,0,0,2,2) 
   if bd==cur_board and math.sqrt((bd.cx+cos(pi/2)*r-b.x)^2+(bd.cy+sin(pi/2)*r-b.y)^2)<=8 then
     coins=coins+n
+    sfx(5,'E-5',64,3)
+    table.remove(bd.bullets,i)
+  end
+end
+
+function itemcoin(b,i,bd)
+  spr(b.id,b.x-12,b.y-12,8,1,0,0,3,3)
+  if bd==cur_board and math.sqrt((bd.cx+cos(pi/2)*r-b.x)^2+(bd.cy+sin(pi/2)*r-b.y)^2)<=12 then
+    if b.id==64 then pmem(5,pmem(5)+1) end
+    if b.id==67 then pmem(6,pmem(6)+1) end
+    if b.id==70 then pmem(7,pmem(7)+1) end
+    if b.id==73 then pmem(8,pmem(8)+1) end
     sfx(5,'E-5',64,3)
     table.remove(bd.bullets,i)
   end
