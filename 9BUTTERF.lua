@@ -243,52 +243,22 @@ function render_board(index,bd)
       end
     end
     if b.id==36 then 
-      spr(b.id,b.x-4,b.y-4,8) 
-      if bd==cur_board and math.sqrt((bd.cx+cos(pi/2)*r-b.x)^2+(bd.cy+sin(pi/2)*r-b.y)^2)<=4 then
-        coins=coins+1
-        sfx(5,'E-5',64,3)
-        table.remove(bd.bullets,i)
-      end
+      smolcoin(1,b,i,bd)
     end
     if b.id==37 then 
-      spr(b.id,b.x-4,b.y-4,8) 
-      if bd==cur_board and math.sqrt((bd.cx+cos(pi/2)*r-b.x)^2+(bd.cy+sin(pi/2)*r-b.y)^2)<=4 then
-        coins=coins+2
-        sfx(5,'E-5',64,3)
-        table.remove(bd.bullets,i)
-      end
+      smolcoin(2,b,i,bd)
     end
     if b.id==38 then 
-      spr(b.id,b.x-4,b.y-4,8) 
-      if bd==cur_board and math.sqrt((bd.cx+cos(pi/2)*r-b.x)^2+(bd.cy+sin(pi/2)*r-b.y)^2)<=4 then
-        coins=coins+5
-        sfx(5,'E-5',64,3)
-        table.remove(bd.bullets,i)
-      end
+      smolcoin(5,b,i,bd)
     end
     if b.id==39 then 
-      spr(b.id,b.x-8,b.y-8,8,1,0,0,2,2) 
-      if bd==cur_board and math.sqrt((bd.cx+cos(pi/2)*r-b.x)^2+(bd.cy+sin(pi/2)*r-b.y)^2)<=8 then
-        coins=coins+10
-        sfx(5,'E-5',64,3)
-        table.remove(bd.bullets,i)
-      end
+      biggcoin(10,b,i,bd)
     end
     if b.id==41 then 
-      spr(b.id,b.x-8,b.y-8,8,1,0,0,2,2) 
-      if bd==cur_board and math.sqrt((bd.cx+cos(pi/2)*r-b.x)^2+(bd.cy+sin(pi/2)*r-b.y)^2)<=8 then
-        coins=coins+20
-        sfx(5,'E-5',64,3)
-        table.remove(bd.bullets,i)
-      end
+      biggcoin(20,b,i,bd)
     end
     if b.id==43 then 
-      spr(b.id,b.x-8,b.y-8,8,1,0,0,2,2) 
-      if bd==cur_board and math.sqrt((bd.cx+cos(pi/2)*r-b.x)^2+(bd.cy+sin(pi/2)*r-b.y)^2)<=8 then
-        coins=coins+50
-        sfx(5,'E-5',64,3)
-        table.remove(bd.bullets,i)
-      end
+      biggcoin(50,b,i,bd)
     end
     if math.sqrt((b.x-bd.cx)^2+(b.y-bd.cy)^2)>=136/2-16 then table.remove(bd.bullets,i) end
   end
@@ -637,6 +607,24 @@ function drip_coin()
       sfx(5,'E-5',64,3)
       return
     end
+  end
+end
+
+function smolcoin(n,b,i,bd)
+  spr(b.id,b.x-4,b.y-4,8) 
+  if bd==cur_board and math.sqrt((bd.cx+cos(pi/2)*r-b.x)^2+(bd.cy+sin(pi/2)*r-b.y)^2)<=4 then
+    coins=coins+n
+    sfx(5,'E-5',64,3)
+    table.remove(bd.bullets,i)
+  end
+end
+
+function biggcoin(n,b,i,bd)
+  spr(b.id,b.x-8,b.y-8,8,1,0,0,2,2) 
+  if bd==cur_board and math.sqrt((bd.cx+cos(pi/2)*r-b.x)^2+(bd.cy+sin(pi/2)*r-b.y)^2)<=8 then
+    coins=coins+n
+    sfx(5,'E-5',64,3)
+    table.remove(bd.bullets,i)
   end
 end
 
