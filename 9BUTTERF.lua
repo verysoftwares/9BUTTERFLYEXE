@@ -904,7 +904,7 @@ function shoppe()
   if btnp(7) and pmem(4)>=10 then pmem(4,pmem(4)-10); pmem(6,pmem(6)+1) end
   if btnp(5) and pmem(4)>=2 then pmem(4,pmem(4)-2); pmem(7,pmem(7)+1) end
   if btnp(6) and pmem(4)>=3 then pmem(4,pmem(4)-3); pmem(8,pmem(8)+1) end
-  for i=0,3 do if btnp(i) then TIC=stagesel; local diff=boards[#boards].a-pi/2; boards[#boards].a=pi/2; for i,b in ipairs(cur_board.bullets) do b.a=b.a-diff end; return end end
+  for i=0,3 do if btnp(i) or keyp(03) then TIC=stagesel; local diff=boards[#boards].a-pi/2; boards[#boards].a=pi/2; for i,b in ipairs(cur_board.bullets) do b.a=b.a-diff end; return end end
 end
 
 function credits()
