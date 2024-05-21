@@ -350,12 +350,22 @@ function push_board()
     if #boards==4 then bt=10*60 end
     if #boards==5 then bt=5*60 end
     if #boards==6 then bt=40 end
+    if #boards==7 then bt=nil end
+    if #boards==8 then bt=nil end
+    if #boards==9 then bt=nil end
+    if #boards==10 then bt=nil end
+    if #boards==11 then bt=nil end
     if #boards==1 then spd=0.5 end
     if #boards==2 then spd=0.75 end
     if #boards==3 then spd=0.25 end
     if #boards==4 then spd=0.85 end
     if #boards==5 then spd=1.0 end
     if #boards==6 then spd=1.25 end
+    if #boards==7 then spd=nil end
+    if #boards==8 then spd=nil end
+    if #boards==9 then spd=nil end
+    if #boards==10 then spd=nil end
+    if #boards==11 then spd=nil end
   end
   boards[#boards].pr=r
   boards[#boards].tt=t+1
